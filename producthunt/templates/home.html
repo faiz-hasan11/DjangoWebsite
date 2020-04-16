@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<br><br><br>
+<div class="container">
+{% for i in projects.all %}
+<div class="row">
+  <div class="col-2">
+    <img src="{{ i.icon.url }}" class="img-fluid"/>
+  </div>
+  <div class="col-6">
+    <a href="{% url 'detail' i.id %}"><h1>{{ i.title }}</h1></a>
+    <p>{{ i.body }}</p>
+
+    <br>
+    <hr>
+</div>
+
+
+{% endfor %}
+</div>
+{% endblock %}
